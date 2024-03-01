@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100%;
+            height: 20754px;
+        }
+
+        section {
+            position: fixed;
+            width: 90%;
+            height: 90%;
+            top: 5%;
+            left: 5%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+        }
+
+        #demo {
+            color: white;
+        }
+        ul{
+            width: 400px;
+            height: 70px;
+            /* border: 2px solid white; */
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            background-color: rgba(250, 235, 215, 0.637);
+        }
+        ul>li{
+            list-style-type: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 2px solid yellow; */
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 30px;
+            color: rgb(45, 44, 44);
+            text-transform: uppercase;
+            transition: 1s;
+        }
+        #target{
+            margin-top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1 id="demo"></h1>
+        </section>
+        <ul>
+            <li id="target">min</li>
+            <li>sina</li>
+            <li>tina</li>
+            <li>zhina</li>
+            <li>shima</li>
+            <li>ali</li>
+        </ul>
+    </main>
+
+    <script>
+        let stOld = 0
+        let target = document.getElementById('target')
+        window.addEventListener('scroll', () => {
+            let stNew = parseInt(window.scrollY)
+
+            let x = parseInt((target.computedStyleMap().get('margin-top')).value)
+            console.log(x);
+
+
+            if(stNew > stOld){
+                document.getElementById('demo').innerHTML = 'scroll to down'
+                setTimeout(() => {
+                    target.style.marginTop=(x-70)+'px'
+                }, 400);
+            }else{
+                document.getElementById('demo').innerHTML = 'scroll to up'
+                setTimeout(() => {
+                    target.style.marginTop=(x+70)+'px'
+                }, 400);
+            }
+            stOld = stNew
+        })
+    </script>
+</body>
+
+</html>

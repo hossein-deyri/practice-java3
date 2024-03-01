@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="drag"></div>
+    <script>
+        let x = 0
+        let y = 0
+        let drag = document.getElementById('drag')
+        drag.addEventListener('mousedown', () => {
+            drag.addEventListener('mousemove', test)
+        })
+        drag.addEventListener('mouseup', () => {
+            drag.removeEventListener('mousemove', test)
+        })
+
+
+        function test(e) {
+            x = e.clientX
+            y = e.clientY
+            console.log(x + " - " + y);
+            drag.style.left = x + 'px'
+            drag.style.top = y + 'px'
+        }
+    </script>
+</body>
+
+</html>

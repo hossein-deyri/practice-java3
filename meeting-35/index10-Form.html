@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .form {
+            width: 35%;
+            padding: 20px;
+            border: 2px solid white;
+            background-color: wheat;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            >* {
+                display: flex;
+                width: 90%;
+                margin: 10px 0;
+                height: 40px;
+                font-size: 25px;
+            }
+
+            >label {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="myForm(event)" action="reg.php" class="form" name="signup">
+        <input type="text" placeholder="email" name="email">
+        <label for="" style="color:red">error eccured!</label>
+        <input type="text" placeholder="password" name="pass">
+        <label for="" style="color:red">error eccured!</label>
+
+        <button>send it!</button>
+
+    </form>
+    <script>
+
+        function myForm(e) {
+            let flag = 0
+            let labels = document.querySelectorAll('label')
+            labels.forEach((val) => {
+                val.style.display = 'none'
+            })
+            // return false
+            let _email = document.forms['signup']['email'].value
+            let _pass = document.forms['signup']['pass'].value
+
+
+            if (
+                _email == null ||
+                _email == '' ||
+                (_email.search(/<script/)) >= 0 ||
+                (_email.search(/&lt;script/)) >= 0 ||
+                (_email.search(/script/)) >= 0
+            ) {
+                document.forms['signup']['email'].nextElementSibling.style.display = 'flex'
+                flag++
+            } else {
+                // continue/....
+                let temp = _email.match(/@/g)
+                if (
+                    (temp == null) ||
+                    (_email.search(/@/)) <= 2 ||
+                    _email.length < 10 ||
+                    (_email.search(/[~!)#$%^&(*/]/)) >= 0 ||
+                    (_email.search(/\s+/)) >= 0
+                    // !(_email).includes('@') ||
+                    // (!(_email)).includes('.')                
+                ) {
+                    document.forms['signup']['email'].nextElementSibling.style.display = 'flex'
+                    flag++
+                }
+            }
+
+            if (
+                _pass == null ||
+                _pass == '' ||
+                (_pass.search(/<script/)) >= 0 ||
+                (_pass.search(/&lt;script/)) >= 0 ||
+                (_pass.search(/script/)) >= 0
+            ) {
+                document.forms['signup']['pass'].nextElementSibling.style.display = 'flex'
+                flag++
+                // alert('boooooooooooooooooooooooooooooooooooooooos')
+            } else {
+                // continue/....
+                if (
+                    _pass.search(/[0-9]/) == -1 ||
+                    _pass.search(/[a-z]/) == -1 ||
+                    _pass.search(/[A-Z]/) == -1 ||
+                    _pass.search(/[~!@#$%^&*()_+]/) == -1
+                ) {
+                    document.forms['signup']['pass'].nextElementSibling.style.display = 'flex'
+                    flag++
+                }
+            }
+
+            if (flag > 0) {
+                e.preventDefault()
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

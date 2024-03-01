@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+
+    <button>sort a=>b</button>
+    <button>sort b=>a</button>
+    <script>
+        const _btn = document.querySelectorAll('button')
+        const arr = [54564,4,54,46,54,654,6854,6854,654,6546854,6854,54,54]
+        function _show(){
+            document.getElementById('demo').innerHTML=arr
+        }
+        _show()   
+        _btn[0].addEventListener('click', ()=>{
+            arr.sort(function(a,b){return a-b})
+            _show()
+        })
+        _btn[1].addEventListener('click', ()=>{
+            arr.sort(function(a,b){return b-a})
+            _show()
+        })
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            background-color: rgb(77, 76, 76);
+        }
+        .box{
+            width: 60%;
+            border: 2px solid black;
+            margin: 100px auto;
+            >ul{
+                background-color: white;
+                display: flex;
+                >li{
+                    list-style-type: none;
+                    width: 25%;
+                    height: 40px;
+                    /* border: 1px solid black; */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+            }
+            #show>p{
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                color: white;
+                font-size: 20px;
+                display: none;
+                transition: 1s;
+                opacity: 0;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li data-tab="tab1">home</li>
+            <li data-tab="tab2">ebout</li>
+            <li data-tab="tab3">gallery</li>
+            <li data-tab="tab4">contact me</li>
+        </ul>
+        <div id="show">
+            <p id="tab1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur impedit commodi eaque quod, voluptas ex fugiat quo alias consequuntur, ad ipsum asperiores assumenda nobis similique omnis. Ex consectetur quis quaerat.</p>
+            <p id="tab2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis eos velit numquam esse consectetur voluptatibus nisi asperiores cupiditate hic, quam, blanditiis adipisci corrupti repellendus, maiores atque explicabo veritatis ad minima modi. Saepe incidunt natus facere dolorem? Enim tempora ipsam perspiciatis. Quia, autem. Explicabo temporibus amet itaque exercitationem quos eveniet eius.</p>
+            <p id="tab3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas soluta laudantium eveniet voluptas sint, atque recusandae aspernatur fuga assumenda quam, iusto necessitatibus unde rerum accusamus. Velit mollitia eius, autem ad eos officia ipsam cupiditate at iusto hic sunt accusantium quam, nemo totam!</p>
+            <p id="tab4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi incidunt sit explicabo ipsum cumque? Pariatur, ut quas. Totam ipsam nam iusto saepe voluptates fugiat nesciunt, quaerat minima officia fugit dolores magnam vitae. Placeat iure soluta at rerum!</p>
+        </div>
+    </div>
+    <script>
+        let _li = document.querySelectorAll('ul>li')
+        let _p = document.querySelectorAll('p')
+        _li.forEach((val)=>{
+            val.addEventListener('click', ()=>{
+
+                _p.forEach((val)=>{
+                    val.style.display='none'
+                    val.style.opacity='0'
+                })
+
+                _li.forEach((val)=>{
+                    val.style.background='white'
+                })
+                
+                val.style.background='gray'
+                let temp = val.getAttribute('data-tab')
+                document.querySelector('#show>p#'+temp).style.display='flex'
+                setTimeout(() => {
+                    document.querySelector('#show>p#'+temp).style.opacity='1'
+                }, 10);
+            })
+        })
+    </script>
+</body>
+</html>

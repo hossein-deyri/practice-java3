@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let inp = prompt('your name ?')
+        let txt = 'Lorem ipsum dolor kjhbsit54 amet sit consectetur, adipisicing elit. Perspiciatis optio sit doloribus sit ipsa iste rem ea.'
+
+        // txt = txt.replace(/sit/g, '<mark><b>site</b></mark>')
+        txt = txt.replace(new RegExp(inp, "g"), '<mark><b>'+inp+'</b></mark>');
+        document.getElementById('demo').innerHTML=txt
+        console.log(txt);
+
+        console.log(new RegExp);
+    </script>
+</body>
+</html>

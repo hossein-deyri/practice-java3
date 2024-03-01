@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const x = ['mina', 45, 'parsa']
+        console.log(x);
+        console.log(x[2]);
+        const y = ['sina', 'rima']
+        const sum = [x , y]
+        // sum = [['mina', 45, 'parsa'] , ['sina', 'rima']]
+        console.log(sum[0][2]);
+        console.log(sum[1][0]);
+
+        // ***********
+
+        const myArr = new Array()
+        myArr[0] = 'parsa'
+        myArr[1] = 'arsam'
+        console.log(myArr[1]);
+
+        // *******
+
+        const p = [1,2]
+        p[2] = 3
+        const q = p
+        if(p == q){
+            alert('p and q is equal')
+        }else{
+            alert('p not equal q')
+        }
+        console.log(q[2]);
+
+
+        // ***************
+
+        // *******
+
+        const k = [1,2]
+        const j = [1,2]
+       
+        if(k == j){
+            alert('k and j is equal')
+        }else{
+            alert('k not equal j')
+        }
+        console.log(q[2]);
+
+
+        // ***************
+
+
+        const arshia = ['mamad', 'moein', 'mahdi', 'mamad2', 'mojtaba', 'sadeq', 'zahra']
+
+        for(let i = 0; i < arshia.length ; i++){
+            console.log(arshia[i]);
+        }
+
+        for(let para in arshia){
+            console.log(`${para} : ${arshia[para]}`)
+            if(para == 3){
+                break
+            }
+        }
+
+        arshia.forEach((val, i)=>{
+            console.log(i + " : " + val);
+        })
+
+        arshia.map((val, i, array)=>{
+            console.log(i + " : " + val + " + " + array);
+        })
+
+
+        // *********
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let txt = 'Lorem ipsum dolor kjhbsit54 amet 1sit1 consectetur, adipisicing elit. Perspiciatis optio sit doloribus sit ipsa iste rem ea.'
+
+        // /pattern/modifire
+        // let num = txt.search(/sit/i)
+        // let num = txt.indexOf('sit', 19)
+        let index=0
+        
+        for(let i = 0 ; i<txt.length; i++){
+            let num = txt.indexOf('sit', index)
+            console.log(num);
+            if(num>=0){
+                index = num+1
+            }else{
+                alert('count sit : ' + i )
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

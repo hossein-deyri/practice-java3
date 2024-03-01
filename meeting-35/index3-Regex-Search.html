@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let txt = 'Lorem ipsum dolor kjhbsit54 amet sit consectetur, sit adipisicing elit. Perspiciatis optio sit doloribus sit ipsa iste rem ea.'
+
+        // /pattern/modifire
+        
+         let num1 = txt.search(/sit/)
+         console.log(num1);
+
+         let num2 = txt.search(/Sit/i)
+         console.log(num2);
+
+        let num3 = txt.indexOf('sit')
+        console.log(num3);
+
+        let num4 = txt.indexOf('sit', 23)
+        console.log(num4);
+
+     
+    </script>
+</body>
+</html>

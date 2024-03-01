@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    let x=0
+    let y=0
+    let sum = ''
+    window.addEventListener('mousemove', (e) => {
+        x = e.clientX
+        y = e.clientY
+        console.log(x + " " + y);
+
+    })
+    document.getElementsByClassName('box')[0].addEventListener('mousedown', (e) => {
+        sum = setInterval(_set, 0);
+    })
+    document.getElementsByClassName('box')[0].addEventListener('mouseup', (e) => {
+        clearInterval(sum)
+    })
+    function _set() {
+        document.getElementsByClassName('box')[0].style.left = x + 'px'
+        document.getElementsByClassName('box')[0].style.top = y + 'px'
+    }
+</script>
+</html>

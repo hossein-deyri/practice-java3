@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 600vh;
+            background-color: black;
+        }
+        button{
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            scale: 3;
+        }
+    </style>
+</head>
+<body>
+    <button id="demo">scrollBy</button>
+    <script>
+        let x = screen.height
+        document.getElementById('demo').addEventListener('click', ()=>{
+            window.scrollBy(0, x)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100%;
+            height: 20754px;
+        }
+
+        section {
+            position: fixed;
+            width: 90%;
+            height: 90%;
+            top: 5%;
+            left: 5%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+        }
+
+        #demo {
+            color: white;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1 id="demo"></h1>
+        </section>
+    </main>
+</body>
+<script>
+    let stOld = 0
+    window.addEventListener('scroll',()=>{
+        let stNew = parseInt(window.scrollY)
+        if( stNew > stOld ){
+            document.getElementById('demo').innerHTML = 'scroll to down'
+        }
+        else{
+            document.getElementById('demo').innerHTML = 'scroll to up'
+        }
+        stOld = stNew
+        
+    })
+</script>
+</html>

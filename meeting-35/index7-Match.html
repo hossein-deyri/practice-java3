@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = 'Lorem 1 ipsum Heloo dolor Helo Helooo kjhbparsa54ipsum amet parsaipsum conseipsumctetur, '
+        let sum1 = x.match(/ipsum/g)
+        console.log(sum1);
+
+        let sum2 = x.match(/\d/g)
+        console.log(sum2);
+        // digit
+        
+        let sum3 = x.match(/\s/g)
+        console.log(sum3);
+        // space
+
+        let sum4 = x.match(/\bLo/)
+        console.log(sum4);
+        // aya ba Lo shoro mishavad kalamei
+
+        let sum5 = x.match(/o+/g)
+        console.log(sum5);
+        // har tedad ke o bod peyda mikonad
+
+        let sum6 = x.match(/lo*/g)
+        console.log(sum6);
+        // har tedad ke lo bashe ba tedad o mokhtalef
+
+
+    </script>
+</body>
+</html>

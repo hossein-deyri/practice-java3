@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let txt = 'Lorem ipsum dolor ا kjhbsit54 amet sit consectetur, adipisicing elit. Perspiciatis optio sit doloribus sit ipsa iste rem ea.'
+
+        // /pattern/modifire
+        let num = txt.search(/a|b/i)
+        console.log(num);
+        let num1 = txt.search(/abs/i)
+        console.log(num1);
+        let num2 = txt.search(/[abs]/i)
+        console.log(num2);
+        let num3 = txt.search(/[a-z]/i)
+        console.log(num3);
+        let num4 = txt.search(/[ا-ی]/i)
+        console.log(num4);
+        let num5 = txt.search(/[0-9]/i)
+        console.log(num5);
+        let num6 = txt.search(/[5-9 , e-h]/i)
+        console.log(num6);
+    </script>
+</body>
+</html>

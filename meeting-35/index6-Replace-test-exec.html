@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let txt = 'Lorem ipsum dolor kjhbparsa54 amet parsa consectetur, adipisicing elit. Perspiciatis optio parsa doloribus parsa ipsa iste rem ea.'
+
+        // /pattern/modifire
+        let num1= txt.replace(/parsa/g , 'arsam')
+        console.log(num1);
+
+        let patt = /parsa/
+        let x = patt.test('Lorem ipsum dolor kjhbparsa54 amet parsa consectetur, ')
+        console.log(x);
+
+        let y = patt.exec('Lorem ipsum dolor kjhbparsa54 amet parsa consectetur, ')
+        console.log (y)
+        document.write(y)
+    </script>
+</body>
+</html>

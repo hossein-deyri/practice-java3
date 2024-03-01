@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+    <button>pop</button>
+    <button>push</button>
+    <button>shift</button>
+    <button>unshift</button>
+    <button>slice</button>
+    <button>splice</button>
+    <button>sort</button>
+    <button>reverse</button>
+    <script>
+        const _btn = document.querySelectorAll('button')
+        const arr = ['mina', 'sina', 'rima', 'tina', 'shima', 'zhina']
+        function _show(){
+            document.getElementById('demo').innerHTML=arr
+        }
+        _show()
+
+
+
+        _btn[0].addEventListener('click', ()=>{
+            arr.pop()
+            _show()
+        })
+        _btn[1].addEventListener('click', ()=>{
+            arr.push('after')
+            _show()
+        })
+        _btn[2].addEventListener('click', ()=>{
+            arr.shift()
+            _show()
+        })
+        _btn[3].addEventListener('click', ()=>{
+            arr.unshift('before')
+            _show()
+        })
+        _btn[4].addEventListener('click', ()=>{
+            alert(arr.slice(1 ,3))
+        })
+        _btn[5].addEventListener('click', ()=>{
+            arr.splice(2, 3, "arsam", "arsam")
+            _show()
+        })
+        _btn[6].addEventListener('click', ()=>{
+            arr.sort()
+            _show()
+        })
+        _btn[7].addEventListener('click', ()=>{
+            arr.reverse()
+            _show()
+        })
+    </script>
+</body>
+</html>
